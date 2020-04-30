@@ -24,7 +24,7 @@ public class Banners {
 		int highestNo = is.max().getAsInt();
 		int startIndex = list.indexOf(highestNo);
 		int endIndex = list.lastIndexOf(highestNo);
-		if (endIndex >= 0) {
+		if (startIndex != endIndex && endIndex >0) {
 			int num = endIndex - startIndex;
 			banner1 = banner1 + num + 1;
 		} else {
@@ -64,7 +64,7 @@ public class Banners {
 					return r1;
 				}
 			} else {
-				return sum1;
+				return sum1 + total + (rightList.size() * total);
 			}
 		} else {
 			return banner1 * highestNo;
